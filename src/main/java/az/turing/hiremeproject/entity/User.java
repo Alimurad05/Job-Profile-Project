@@ -3,12 +3,15 @@ package az.turing.hiremeproject.entity;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.util.List;
 
 
 @Data
 @Entity
+@Table(name = "users")
+@NoArgsConstructor
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -31,5 +34,7 @@ public class User {
             joinColumns = @JoinColumn(name = "user_id"),
             inverseJoinColumns = @JoinColumn(name = "skill_id"))
     private List<Skill> skills;
+
+
 
 }

@@ -1,9 +1,17 @@
 server:
   port: 8080
+
 spring:
   application:
-        name: hiremeproject
+    name: hiremeproject
   datasource:
-        url: jdbc:postgresql://localhost:5432/jobportal
-        username: ali
-        password: alimurad05
+    url: jdbc:postgresql://localhost:5432/jobportal
+    username: ali
+    password: alimurad05
+  jpa:
+    hibernate:
+      ddl-auto: update
+jwt:
+  secret: 123456789012345678901234567820052
+  expiration: 86400000
+

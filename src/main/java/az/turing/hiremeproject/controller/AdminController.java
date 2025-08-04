@@ -13,7 +13,7 @@ import java.util.List;
 @RequestMapping("/api/admin/users")
 @RequiredArgsConstructor
 @PreAuthorize("hasRole('ADMIN')")
-public class UserController {
+public class AdminController {
     private final UserService userService;
     @GetMapping
     public ResponseEntity<List<UserResponse>> getAllUsers() {

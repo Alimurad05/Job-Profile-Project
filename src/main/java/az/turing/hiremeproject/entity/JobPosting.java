@@ -19,4 +19,8 @@ public class JobPosting {
     private String location;
     private Boolean isActive;
     private LocalDate startDate;
+    private LocalDate endDate;
+    private String companyName;
+    private String contactNumber;
+    private String contactEmail;
 }

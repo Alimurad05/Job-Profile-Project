@@ -6,7 +6,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public interface UserService {
+public interface AdminService {
     List<UserResponse> getAllUsers();
     UserResponse getUserById(Long id);
     void deleteUserById(Long id);

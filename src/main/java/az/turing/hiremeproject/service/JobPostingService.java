@@ -12,5 +12,7 @@ public interface JobPostingService {
     JobPostingResponse createJobPosting(JobPostingRequest jobPostingRequest);
     List<JobPostingResponse> getAllJobPostings();
     JobPostingResponse getJobPostingById(Long id);
-    public void deleteJobPostingById(Long id);
+    void deleteJobPostingById(Long id);
+    List<JobPostingResponse> searchJobPostingByJobField(String jobField);
+    List<JobPostingResponse> getActiveJobPostings();
 }

@@ -33,6 +33,9 @@ public class JobPosting {
         joinColumns = @JoinColumn(name = "job_posting_id"))
     @Column(name = "requirement")
     private List<String> requirements;
+    @ManyToOne
+    @JoinColumn(name = "user_id")
+    private User createdBy;
     @PrePersist
     protected void onCreate() {
         createdAt = LocalDateTime.now();

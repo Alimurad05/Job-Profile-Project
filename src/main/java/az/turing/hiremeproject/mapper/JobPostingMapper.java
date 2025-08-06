@@ -5,7 +5,7 @@ import az.turing.hiremeproject.dto.JobPostingResponse;
 import az.turing.hiremeproject.entity.JobPosting;
 import org.mapstruct.Mapper;
 
-import java.util.List;
+
 
 @Mapper(componentModel = "spring")
 public interface JobPostingMapper {

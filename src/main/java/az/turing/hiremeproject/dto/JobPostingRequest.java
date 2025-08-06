@@ -11,6 +11,7 @@ public record JobPostingRequest(
          String companyName,
          String contactNumber,
          String contactEmail,
-         List<String> requirements
+         List<String> requirements,
+         String jobField
 ) {
 }

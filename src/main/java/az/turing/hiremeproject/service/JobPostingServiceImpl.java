@@ -10,6 +10,7 @@ import az.turing.hiremeproject.repo.JobPostingRepo;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.MethodArgumentNotValidException;
 
 import java.util.List;
 
@@ -21,7 +22,7 @@ public class JobPostingServiceImpl implements JobPostingService {
     private final JobPostingRepo jobPostingRepo;
     private final JobPostingMapper jobPostingMapper;
     @Override
-    public JobPostingResponse createJobPosting(JobPostingRequest jobPostingRequest) {
+    public JobPostingResponse createJobPosting(JobPostingRequest jobPostingRequest)  {
         JobPosting jobPosting = jobPostingMapper.toEntity(jobPostingRequest);
         JobPosting jobPostingSaved = jobPostingRepo.save(jobPosting);
         return jobPostingMapper.toResponse(jobPostingSaved);

@@ -29,7 +29,7 @@ public class JobPostingController {
         return ResponseEntity.ok(response);
     }
 
-    @GetMapping
+    @GetMapping("/all")
     public ResponseEntity<List<JobPostingResponse>> getAllJobPostings() {
         List<JobPostingResponse> responses = jobPostingService.getAllJobPostings();
         return ResponseEntity.ok(responses);

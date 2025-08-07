@@ -7,6 +7,7 @@ import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.apache.coyote.Response;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -16,7 +17,8 @@ import java.util.List;
 @RequiredArgsConstructor
 public class JobPostingController {
     private final JobPostingService jobPostingService;
-    @PostMapping
+    @PostMapping("/create")
+    @PreAuthorize("isAuthenticated()")
     public ResponseEntity<JobPostingResponse> createJobPosting(@Valid @RequestBody JobPostingRequest jobPostingRequest) {
         JobPostingResponse jobPostingResponse = jobPostingService.createJobPosting(jobPostingRequest);
         return ResponseEntity.ok(jobPostingResponse);

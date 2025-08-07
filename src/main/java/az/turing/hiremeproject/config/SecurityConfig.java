@@ -29,7 +29,8 @@ public class SecurityConfig {
                 .authorizeHttpRequests(authorize -> authorize
                         .requestMatchers("/api/auth/**").permitAll()
                         .requestMatchers("/api/admin/users/**").hasRole("ADMIN")
-                        .requestMatchers("/api/job-posting/**").permitAll()
+                        .requestMatchers("/api/job-posting/search").permitAll()
+                        .requestMatchers("/api/job-posting/create").authenticated()
                         .anyRequest().authenticated()
                 )
                 .authenticationProvider(authenticationProvider())

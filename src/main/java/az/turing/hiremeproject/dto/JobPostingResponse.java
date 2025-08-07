@@ -16,6 +16,7 @@ public record JobPostingResponse(
         String contactEmail,
         LocalDateTime createdAt,
         LocalDateTime updatedAt,
-        List<String> requirements
+        List<String> requirements,
+        String jobField
 ) {
 }

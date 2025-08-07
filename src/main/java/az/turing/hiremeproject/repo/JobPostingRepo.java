@@ -10,6 +10,7 @@ import java.util.List;
 import java.util.Optional;
 
 public interface JobPostingRepo extends JpaRepository<JobPosting,Long> {
+    @Query("SELECT j FROM JobPosting j WHERE LOWER(j.jobField) = LOWER(:jobField)")
     Optional<List<JobPosting>> findJobPostingsByJobField(String jobField);
     Optional<List<JobPosting>> findJobPostingsByIsActive(Boolean isActive);
 

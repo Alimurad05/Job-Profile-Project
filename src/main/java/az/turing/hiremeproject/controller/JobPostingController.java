@@ -39,7 +39,7 @@ public class JobPostingController {
         return ResponseEntity.noContent().build();
     }
 
-    @GetMapping("/{jobField}/search")
+    @GetMapping("/search")
     public ResponseEntity<List<JobPostingResponse>> searchByJobField(@Valid @RequestParam String jobField) {
         List<JobPostingResponse> responses = jobPostingService.searchJobPostingByJobField(jobField);
         return ResponseEntity.ok(responses);
